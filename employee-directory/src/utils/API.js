@@ -1,10 +1,10 @@
-import axios from "axios";
+// import axios from "axios";
 
-// Export an object containing methods we'll use for accessing the Dog.Ceo API
+// // Export an object containing methods we'll use for accessing the Dog.Ceo API
 
-export default {
+// export default {
 
-    getUsers: function () {
-        return axios.get("https://randomuser.me/");
-    }
-};
+//     getUsers: function () {
+//         return axios.get("https://randomuser.me/");
+//     }
+// };
