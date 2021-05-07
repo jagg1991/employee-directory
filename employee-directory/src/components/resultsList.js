@@ -6,7 +6,9 @@ function ResultsList(props) {
             {props.results.map(results => (
                 <li className="list-group-item" key={results.id}>
                     <div>{results.name}</div>
+
                 </li>
+
             ))}
         </ul>
     )
