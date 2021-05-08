@@ -43,12 +43,30 @@ class SearchResults extends React.Component {
 
     };
 
-    sortByName = e => {
+    sortByFirstName = e => {
         e.preventDefault();
         const employees = this.state.results
         employees.sort(function (a, b) {
             var nameA = a.name.first.toUpperCase(); // ignore upper and lowercase
             var nameB = b.name.first.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+
+            // names must be equal
+            return 0;
+        });
+        this.setState({ results: employees })
+    }
+    sortByLastName = e => {
+        e.preventDefault();
+        const employees = this.state.results
+        employees.sort(function (a, b) {
+            var nameA = a.name.last.toUpperCase(); // ignore upper and lowercase
+            var nameB = b.name.last.toUpperCase(); // ignore upper and lowercase
             if (nameA < nameB) {
                 return -1;
             }
@@ -70,6 +88,9 @@ class SearchResults extends React.Component {
                     search={this.state.search}
                     handleFormSubmit={this.handleFormSubmit}
                     handleInputChange={this.handleInputChange}
+                    sortByFirstName={this.sortByFirstName}
+                    sortByLastName={this.sortByLastName}
+                    co
                     reset={this.reset}
                 />
                 <ResultsList
