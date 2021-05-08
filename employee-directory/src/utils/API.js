@@ -1,12 +1,15 @@
 import axios from "axios";
 
-const BASEURL = "https://randomuser.me/api";
-APIKEY = "?results=";
+const BASEURL = "https://randomuser.me/api/?nat=us,dk,fr,gb&results=30";
 
 
-export default {
 
-    getUsers: function (query) {
-        return axios.get(BASEURL + APIKEY + query);
+
+// eslint-disable-next-line import/no-anonymous-default-export
+const API = {
+    search: function () {
+        return axios.get(BASEURL);
     }
 };
+
+export default API;

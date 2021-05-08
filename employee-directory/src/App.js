@@ -1,11 +1,12 @@
-import SearchForm from "./components/searchForm"
+
 import Jumbotron from "./components/jumbotron"
+import SearchResults from "./components/searchResults"
 
 function App() {
   return (
     <>
       <Jumbotron />
-      < SearchForm />
+      <SearchResults />
     </>
   );
 }

@@ -1,0 +1,10 @@
+header {
+    background-color: linear-gradient(115deg, #c960e4 10%, #380252 90%);;
+    text-align: center
+};
+
+.jumbotron {
+    background-color: black;
+    text-align: center;
+
+}

@@ -1,9 +1,18 @@
 import React from "react"
+const styles = {
+    srch: {
+        margin: "5px"
+    },
 
+}
 function SearchForm(props) {
+
+
     return (
+
         <div className="container">
-            <form className="search">
+
+            <form className="search" onSubmit={props.handleFormSubmit}>
 
                 <div className="form-group">
                     <label htmlFor="search" >Search by last name:</label>
@@ -17,10 +26,14 @@ function SearchForm(props) {
                         id="search" />
                 </div>
                 <button
-                    type="button" className="btn btn-dark" onClick={props.handleFormSubmit}
+                    type="button" style={styles.srch} className="srch btn btn-dark" onClick={props.handleFormSubmit}
                 >Search</button>
+                <button
+                    type="button" className="btn btn-dark" onClick={props.reset}
+                >Clear</button>
             </form>
         </div>
+
     );
 }
 

@@ -1,16 +1,54 @@
 import React from "react"
+import "../styles/results.css";
+const styles = {
+
+    listGroupEmployee: {
+        margin: "40px",
+        padding: 20
+    },
+    listGroupItem: {
+
+
+    },
+    card: {
+        width: "25%",
+        height: "auto",
+
+
+
+    },
+    container: {
+        backgroundColor: "rgb(122, 0, 106)"
+    }
+};
 
 function ResultsList(props) {
+    var employees;
+
+    if (props.filteredResults.length > 0) {
+        employees = props.filteredResults
+    }
+    else {
+        employees = props.results
+    }
     return (
-        <ul className="list-group">
-            {props.results.map(results => (
-                <li className="list-group-item" key={results.id}>
-                    <div>{results.name}</div>
+        <div className="container">
+            <ul style={styles.listGroup} className="list-group-employee">
+                {employees.map(result => (
+                    <div className="card">
+                        <li className="list-group-item" style={styles.listGroupItem} key={result.login.uuid}>
+                            <div style={styles.results} >
+                                <img alt="userImage" src={result.picture.thumbnail}></img>
+                                <h4>{result.name.first} {result.name.last}</h4>
+                                <h5>{result.email}</h5>
+                            </div>
 
-                </li>
+                        </li>
+                    </div>
 
-            ))}
-        </ul>
+                ))}
+            </ul>
+        </div>
     )
 }
 
