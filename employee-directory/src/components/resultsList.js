@@ -4,15 +4,18 @@ const styles = {
 
     listGroupEmployee: {
         margin: "40px",
-        padding: 20
+        padding: 20,
+
     },
     listGroupItem: {
 
 
     },
     card: {
-        width: "25%",
+
+        width: "75%",
         height: "auto",
+        margin: "20px"
 
 
 
@@ -33,9 +36,9 @@ function ResultsList(props) {
     }
     return (
         <div className="container">
-            <ul style={styles.listGroup} className="list-group-employee">
+            <ul style={styles.listGroupEmployee} className="list-group-employee">
                 {employees.map(result => (
-                    <div className="card">
+                    <div className="card" style={styles.card}>
                         <li className="list-group-item" style={styles.listGroupItem} key={result.login.uuid}>
                             <div style={styles.results} >
                                 <img alt="userImage" src={result.picture.thumbnail}></img>

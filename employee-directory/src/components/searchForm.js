@@ -1,9 +1,11 @@
 import React from "react"
 const styles = {
-    srch: {
+    btn: {
         margin: "5px"
+    },
+    container: {
+        margin: "50px"
     }
-
 
 }
 function SearchForm(props) {
@@ -11,7 +13,7 @@ function SearchForm(props) {
 
     return (
 
-        <div className="container">
+        <div style={styles.container} className="container">
 
             <form className="search" onSubmit={props.handleFormSubmit}>
 
@@ -27,16 +29,16 @@ function SearchForm(props) {
                         id="search" />
                 </div>
                 <button
-                    type="button" style={styles.srch} className="srch btn btn-dark" onClick={props.handleFormSubmit}
+                    type="button" style={styles.btn} className="srch btn btn-dark" onClick={props.handleFormSubmit}
                 >Search</button>
                 <button
-                    type="button" className="srch btn btn-dark" onClick={props.reset}
+                    type="button" style={styles.btn} className="srch btn btn-dark" onClick={props.reset}
                 >Clear</button>
                 <button
-                    type="button" className=" srch2 btn btn-dark" onClick={props.sortByFirstName}
+                    type="button" style={styles.btn} className=" srch2 btn btn-dark" onClick={props.sortByFirstName}
                 >Sort by first name</button>
                 <button
-                    type="button" className=" srch2 btn btn-dark" onClick={props.sortByLastName}
+                    type="button" style={styles.btn} className=" srch2 btn btn-dark" onClick={props.sortByLastName}
                 >Sort by first last name</button>
             </form>
         </div>
